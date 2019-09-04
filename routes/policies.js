@@ -34,10 +34,9 @@ router.get('/api/v1/product-offers', function (req, res, next) {
                 "price_tax": "0,80",
                 "documents": [
                     {
-                        "document_title":
-                            "gu_wg_de_ks_0918_rechtsdokumente.pdf", "document_file":
-                            "gu_wg_de_ks_0918_rechtsdokumente.pdf", "document_link":
-                            "https://api.wertgarantie.com/download/84fa9900-f476-4917- a79c-5fa1cb26ea53"
+                        "document_title": "gu_wg_de_ks_0918_rechtsdokumente.pdf",
+                        "document_file": "gu_wg_de_ks_0918_rechtsdokumente.pdf",
+                        "document_link": "https://api.wertgarantie.com/download/84fa9900-f476-4917- a79c-5fa1cb26ea53"
                     }]
             }, {
                 "id": 2,
