@@ -3,7 +3,7 @@ var router = express.Router();
 /*
 https://api.wertgarantie.com/api/v1/product-offers?device_class=04854bfa-1a02-4b44-b981-46f7ead8bb7e&device_purchase_price=800&device_purchase_date=2018-09-01
 */
-router.get('/api/v1/product-offers', function (req, res, next) {
+router.get('/api/v1/product-offers', function (req, res) {
     if(!(req.query.device_class && req.query.device_purchase_price && req.query.device_purchase_date)) {
         throw new Error("Insufficient query parameters");
     }
