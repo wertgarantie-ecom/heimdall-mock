@@ -1,2 +1,1 @@
-# midgard-mock
-
+[![Heroku](https://heroku-badge.herokuapp.com/?app=midgard-heimdall-mock&root=/healthcheck)]
