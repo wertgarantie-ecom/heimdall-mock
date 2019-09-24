@@ -16,54 +16,72 @@ router.get('/api/v1/product-offers', function (req, res) {
     res.send({
         "payload": [
             {
-                "id": 1,
-                "name": "Komplettschutz",
+                "id": 11,
+                "premium": false,
+                "name": "Schutzpaket Premium",
                 "payment": "Monat",
-                "url":
-                    "https://www.wertgarantie.com/Home/Landingpage/komplettschutz.aspx",
-                "utm_campaign": "offer-ks",
-                "services": [
-                    "Schutz vor Reparaturkosten"
-                ],
+                "url": null,
+                "utm_campaign": null,
+                "services": [],
                 "advantages": [
-                    "Reparaturkostenübernahme bei Sturzschäden, Akkudefekten, Wasserschäden, u.v.m.",
-                    "Auch für Gebrauchtgeräte",
-                    "Schnelle, unkomplizierte Schadensabwicklung",
-                    "Kostenbeteiligung bei Neukauf"
+                    "Fall und Sturzschäden",
+                    "Feuchtigkeitsschäden",
+                    "Verschleiß inkl. Akku Defekten"
                 ],
-                "price": "5,00",
+                "price": "9,95",
                 "price_type": "ab",
                 "price_currency": "€",
-                "price_formatted": "ab 5,00 €",
-                "price_tax": "0,80",
+                "price_formatted": "ab 9,95 €",
+                "price_tax": "1,59",
                 "documents": [
                     {
-                        "document_title": "gu_wg_de_ks_0918_rechtsdokumente.pdf",
-                        "document_file": "gu_wg_de_ks_0918_rechtsdokumente.pdf",
-                        "document_link": "https://api.wertgarantie.com/download/84fa9900-f476-4917- a79c-5fa1cb26ea53"
-                    }]
+                        "document_title": "Informationsblatt für Versicherungsprodukte",
+                        "document_file": "schutzpaket_md_premium_2017_|_ipid_premium",
+                        "document_type": "IPID",
+                        "document_link": "https://stage-api.wertgarantie.com/download/b5cf7159-264e-4f0a-a6df-485f62afb814"
+                    },
+                    {
+                        "document_title": "Allgemeine Versicherungsbedingungen",
+                        "document_file": "schutzpaket_md_premium_2017_|_avb_premium",
+                        "document_type": "GTCI",
+                        "document_link": "https://stage-api.wertgarantie.com/download/76c4e67c-89bf-4bd4-a1d2-b6470ed07629"
+                    }
+                ]
             },
             {
-                "id": 2,
-                "name": "Komplettschutz - Premium",
+                "id": 14,
+                "premium": true,
+                "name": "Schutzpaket Premium inkl. Diebstahlschutz",
                 "payment": "Monat",
-                "url": "https://www.wertgarantie.com/Home/Landingpage/komplettschutz.aspx",
-                "utm_campaign": "offer-ks-premium",
+                "url": null,
+                "utm_campaign": null,
                 "services": [
-                    "+ Diebstahlschutz",
-                    "+ ohne Selbstbeteiligung"
+                    "einfacher Diebstahl"
                 ],
                 "advantages": [
-                    "Reparaturkostenübernahme bei Fall- & Sturzschäden, Akkudefekten, Wasser - schäden, u.v.m.", "Diebstahlschutz inklusive",
-                    "Keine Selbstbeteiligung",
-                    "Kostenbeteiligung bei Neukauf"
+                    "Fall und Sturzschäden",
+                    "Feuchtigkeitsschäden",
+                    "Verschleiß inkl. Akku Defekten"
                 ],
-                "price": "6,95",
+                "price": "11,95",
                 "price_type": "ab",
                 "price_currency": "€",
-                "price_formatted": "ab 6,95 €",
-                "price_tax": "1,11",
-                "documents": []
+                "price_formatted": "ab 11,95 €",
+                "price_tax": "1,91",
+                "documents": [
+                    {
+                        "document_title": "Informationsblatt für Versicherungsprodukte",
+                        "document_file": "schutzpaket_md_premium_2017_|_ipid_premium",
+                        "document_type": "IPID",
+                        "document_link": "https://stage-api.wertgarantie.com/download/b17f85d5-58c1-416c-869f-85ff572afd9c"
+                    },
+                    {
+                        "document_title": "Allgemeine Versicherungsbedingungen",
+                        "document_file": "schutzpaket_md_premium_2017_|_avb_premium",
+                        "document_type": "GTCI",
+                        "document_link": "https://stage-api.wertgarantie.com/download/49b77b3d-a949-4fa9-8c51-34edadfa959d"
+                    }
+                ]
             }
         ]
     });
