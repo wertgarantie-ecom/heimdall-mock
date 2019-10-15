@@ -1,1 +1,2 @@
-[![Heroku](https://heroku-badge.herokuapp.com/?app=midgard-heimdall-mock&root=healthcheck)](https://midgard-heimdall-mock.herokuapp.com)
+[![Heroku](https://heroku-badge.herokuapp.com/?app=heimdall-mock&root=healthcheck)](https://heimdall-mock.herokuapp.com)
+[![CircleCI](https://circleci.com/gh/wertgarantie-ecom/bifrost/tree/master.svg?style=svg&circle-token=f048ebb6567d711f613d70f7091bc60f268da9ae)](https://circleci.com/gh/wertgarantie-ecom/bifrost/tree/master)
