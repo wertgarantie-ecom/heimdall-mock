@@ -225,7 +225,7 @@ const allProductsByDeviceClass = {
         "11": phone11,
         "14": phone14
     },
-    "bike": {
+    "6bdd2d93-45d0-49e1-8a0c-98eb80342222": {
         "21": bike21,
         "24": bike24
     }
@@ -258,11 +258,9 @@ router.get('/api/v1/dummy-product-offers', function (req, res) {
     });
 });
 
-router.get('/api/v1/dummy-product-offers/:deviceClass/:productId', function (req, res) {
-    var product = allProductsByDeviceClass[req.params.deviceClass][req.params.productId];
-    res.send({
-        payload: product
-    });
+router.get('/api/v1/dummy-product', function (req, res) {
+    var product = allProductsByDeviceClass[req.query.device_class][req.query.product_id];
+    res.send(product);
 });
 
 router.get('/api/v1/product-offers', function (req, res) {
