@@ -259,7 +259,14 @@ router.get('/api/v1/dummy-product-offers', function (req, res) {
 });
 
 router.get('/api/v1/dummy-product', function (req, res) {
-    var product = allProductsByDeviceClass[req.query.device_class][req.query.product_id];
+    var productsForDeviceClass = allProductsByDeviceClass[req.query.device_class];
+    if (!productsForDeviceClass) {
+        res.status(400).send( {error: "Device class '" + req.query.device_class + "' unknown."} );
+    }
+    var product = productsForDeviceClass[req.query.product_id];
+    if (!product) {
+        res.status(400).send( {error: "No product for device class '" + req.query.device_class + "' unknown."} );
+    }
     res.send(product);
 });
 
