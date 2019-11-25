@@ -259,6 +259,9 @@ router.get('/api/v1/dummy-product-offers', function (req, res) {
 });
 
 router.get('/api/v1/dummy-product', function (req, res) {
+    if (!(req.query.device_class && req.query.product_id)) {
+        res.status(400).send({ error: "insufficient query params: device_class and product_id must be provided" });
+    }
     var productsForDeviceClass = allProductsByDeviceClass[req.query.device_class];
     if (!productsForDeviceClass) {
         res.status(400).send( {error: "Device class '" + req.query.device_class + "' unknown."} );
