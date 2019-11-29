@@ -148,7 +148,7 @@ const bike21 = {
 const bike24 = {
     "id": 24,
     "premium": true,
-    "name": "Schutzpaket Premium inkl. Diebstahlschutz",
+    "name": "E-Bike Komplettschutz mit jährlicher Zahlweise",
     "payment": "Jahr",
     "url": null,
     "utm_campaign": null,
