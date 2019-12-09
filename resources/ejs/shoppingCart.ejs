@@ -55,6 +55,7 @@
         </div>
         <div class="confirmation-container">
             <wertgarantie-confirmation
+                id="wg-confirmation"
                 data-client-id="<%= publicClientId %>"
                 data-bifrost-uri="http://localhost:3000/wertgarantie">
             </wertgarantie-confirmation>
@@ -71,6 +72,8 @@
     <script>
         function performCheckout() {
             console.log("checkout performing");
+
+            // check confirm component 
 
             // perform checkout call to bifröst here
 

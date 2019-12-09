@@ -242,7 +242,7 @@ function getProductsByDeviceClass(deviceClass) {
 /*
 https://api.wertgarantie.com/api/v1/product-offers?device_class=04854bfa-1a02-4b44-b981-46f7ead8bb7e&device_purchase_price=800&device_purchase_date=2018-09-01
 */
-router.get('/api/v1/dummy-product-offers', function (req, res) {
+router.get('/dummy-product-offers', function (req, res) {
     if(!(req.query.device_class && req.query.device_purchase_price && req.query.device_purchase_date)) {
         throw new Error("Insufficient query parameters");
     }
@@ -258,7 +258,7 @@ router.get('/api/v1/dummy-product-offers', function (req, res) {
     });
 });
 
-router.get('/api/v1/dummy-product', function (req, res) {
+router.get('/dummy-product', function (req, res) {
     if (!(req.query.device_class && req.query.product_id)) {
         res.status(400).send({ error: "insufficient query params: device_class and product_id must be provided" });
     }
@@ -273,7 +273,7 @@ router.get('/api/v1/dummy-product', function (req, res) {
     res.send(product);
 });
 
-router.get('/api/v1/product-offers', function (req, res) {
+router.get('/product-offers', function (req, res) {
     if(!(req.query.device_class && req.query.device_purchase_price && req.query.device_purchase_date)) {
         throw new Error("Insufficient query parameters");
     }
