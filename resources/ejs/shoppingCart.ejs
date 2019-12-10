@@ -53,40 +53,26 @@
                 </div>
             </div>
         </div>
-        <div class="confirmation-container">
-            <wertgarantie-confirmation
-                id="wg-confirmation"
-                data-client-id="<%= publicClientId %>"
-                data-bifrost-uri="http://localhost:3000/wertgarantie">
-            </wertgarantie-confirmation>
-        </div>
-        <div class="shopping-cart-bottom">
-            <div>
-                <div class="checkout-button-div">
-                    <button class="checkoutBtn" onclick="performCheckout()">Checkout</button>
+        <form id="checkout-form" action="/demoshop/checkout" method="POST">
+        <!-- <form id="checkout-form" action="/demoshop/checkout" method="POST" onsubmit="return checkConfirmationComponent()"> -->
+            <div class="confirmation-container">
+                <wertgarantie-confirmation
+                    id="wg-confirmation"
+                    data-form-selector="#checkout-form"
+                    data-client-id="<%= publicClientId %>"
+                    data-bifrost-uri="http://localhost:3000/wertgarantie">
+                </wertgarantie-confirmation>
+            </div>
+            <div class="shopping-cart-bottom">
+                <div>
+                    <div class="checkout-button-div">
+                        <input type="submit" class="checkoutBtn" value="Checkout"/>
+                    </div>
                 </div>
             </div>
-        </div>
+        </form>
     </div>
+    <!-- <script src="/js/confirmation.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/package-confirmation/dist/confirmation.min.js"></script>
-    <script>
-        function performCheckout() {
-            console.log("checkout performing");
-
-            // check confirm component 
-
-            // perform checkout call to bifröst here
-
-
-            var xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                    console.log(this.response);
-                }
-            }
-            xhttp.open('POST', '/demoshop/checkout');
-            xhttp.send();
-        }
-    </script>
 </body>
 </html>

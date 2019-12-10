@@ -36,14 +36,13 @@ exports.checkout = function checkout(req, res) {
     console.log(dummyshopCookie);
     const newOrderId = uuid();
     res.clearCookie('dummyshop');
-    res.send({ 
+    res.render('purchaseComplete', { 
         orderedProducts: dummyshopCookie.products,
         orderId: newOrderId
     })
 }
 
 exports.newShoppingCartItem = function newShoppingCartItem(req, res) {
-    console.log(req)
     const productId = req.params.productId;
     res.cookie('insurable', true)
     res.render('newShoppingCartItem', {
