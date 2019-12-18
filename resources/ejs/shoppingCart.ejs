@@ -54,11 +54,13 @@
             </div>
         </div>
         <form id="checkout-form" action="/demoshop/checkout" method="POST">
+            <input type="hidden" id="wertgarantie-cookie">
         <!-- <form id="checkout-form" action="/demoshop/checkout" method="POST" onsubmit="return checkConfirmationComponent()"> -->
             <div class="confirmation-container">
                 <wertgarantie-confirmation
                     id="wg-confirmation"
                     data-form-selector="#checkout-form"
+                    data-input-selector="#wertgarantie-cookie"
                     data-client-id="<%= publicClientId %>"
                     data-bifrost-uri="https://wertgarantie-bifrost.herokuapp.com/wertgarantie">
                 </wertgarantie-confirmation>
