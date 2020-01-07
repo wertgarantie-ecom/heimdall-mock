@@ -7,18 +7,19 @@
     "start-dev": "NODE_ENV=local PORT=3001 nodemon ./bin/www"
   },
   "dependencies": {
-    "acorn": "^7.1.0",
-    "cookie-parser": "~1.4.4",
-    "debug": "~2.6.9",
-    "dotenv": "^8.2.0",
-    "ejs": "^3.0.1",
-    "express": "~4.16.1",
-    "express-healthcheck": "^0.1.0",
-    "express-jsonschema": "^1.1.6",
-    "http-errors": "~1.6.3",
-    "jade": "~1.11.0",
-    "morgan": "~1.9.1",
-    "uuid": "^3.3.3"
+    "acorn": "7.1.0",
+    "cookie-parser": "1.4.4",
+    "debug": "2.6.9",
+    "dotenv": "8.2.0",
+    "ejs": "3.0.1",
+    "express": "4.16.1",
+    "express-healthcheck": "0.1.0",
+    "express-jsonschema": "1.1.6",
+    "http-errors": "1.6.3",
+    "morgan": "1.9.1",
+    "uuid": "3.3.3",
+    "constantinople": "3.1.1",
+    "clean-css": "4.1.11"
   },
   "devDependencies": {
     "eslint": "^6.3.0"
