@@ -9,6 +9,9 @@ var policyRouter = require('./routes/policies');
 
 var app = express();
 
+const resolvedPath = path.resolve(__dirname, '../config/' + process.env.NODE_ENV + '.env');
+dotenv.config({path: resolvedPath});
+
 // view engine setup
 app.set('views', path.join(__dirname, 'resources/ejs'));
 app.set('view engine', 'ejs');
