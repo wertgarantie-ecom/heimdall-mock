@@ -4,12 +4,13 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
+const dotenv = require('dotenv');
 
 var policyRouter = require('./routes/policies');
 
 var app = express();
 
-const resolvedPath = path.resolve(__dirname, '../config/' + process.env.NODE_ENV + '.env');
+const resolvedPath = path.resolve(__dirname, './config/' + process.env.NODE_ENV + '.env');
 dotenv.config({path: resolvedPath});
 
 // view engine setup

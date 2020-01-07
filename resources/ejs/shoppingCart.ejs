@@ -60,9 +60,8 @@
                     id="wg-confirmation"
                     data-form-selector="#checkout-form"
                     data-client-id="<%= publicClientId %>"
-                    data-bifrost-uri="https://wertgarantie-bifrost.herokuapp.com/wertgarantie">
+                    data-bifrost-uri="<%= bifrostUri %>">
                 </wertgarantie-confirmation>
-                <!-- data-bifrost-uri="http://localhost:3000/wertgarantie"> -->
             </div>
             <div class="shopping-cart-bottom">
                 <div>
@@ -73,7 +72,6 @@
             </div>
         </form>
     </div>
-    <!-- <script src="/js/confirmation.js"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/package-confirmation/dist/confirmation.min.js"></script>
+    <script src="<%= confirmationComponentUri %>"></script>
 </body>
 </html>
