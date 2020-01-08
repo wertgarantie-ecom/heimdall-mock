@@ -68,8 +68,8 @@ exports.checkout = function checkout(req, res) {
         customer: customerData,
         secretClientId: "shopSecretClientId",
         wertgarantieShoppingCart: wertgarantieCookieData
-    }
-    
+    };
+
     // 1: checkout in shop
     const newOrderId = uuid();
     res.clearCookie('dummyshop');
@@ -79,10 +79,11 @@ exports.checkout = function checkout(req, res) {
         method: 'post',
         url: BIFROST_URI + '/shoppingCarts/current/checkout',
         data: wertgarantieCheckoutData
-    }).then(console.log)
-    .catch(error => {
-        console.error(JSON.stringify(error.response.data));
-    });
+    })
+        .then(response => console.log("Bifrost response:" + JSON.stringify(response.data)))
+        .catch(error => {
+            console.error(JSON.stringify(error.response.data));
+        });
 
     res.render('purchaseComplete', {
         orderedProducts: dummyshopCookie.products,
