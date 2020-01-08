@@ -1,9 +1,22 @@
 const uuid = require('uuid');
+const axios = require('axios');
 
 const publicClientId = "b7c15227-1595-43cd-a53c-d9fb98ec3b3a";
 const COMPONENT_SELECTION_POP_UP = process.env.COMPONENT_SELECTION_POP_UP;
 const COMPONENT_CONFIRMATION = process.env.COMPONENT_CONFIRMATION;
 const BIFROST_URI = process.env.BIFROST_URI;
+
+const customerData = {
+    company: 'INNOQ',
+    salutation: 'Herr',
+    firstname: 'Max',
+    lastname: 'Mustermann',
+    street: 'Unter den Linden',
+    zip: '52345',
+    city: 'Köln',
+    country: 'Deutschland',
+    email: 'max.mustermann1234@test.com'
+};
 
 exports.showShopIndex = function showShopIndex(req, res) {
     res.render("dummyProduct");
@@ -37,10 +50,40 @@ exports.addProductToShoppingCart = function addProductToShoppingCart(req, res) {
 };
 
 exports.checkout = function checkout(req, res) {
+    const wertgarantieCookieData = req.body['wertgarantie-cookie-data'];
     var dummyshopCookie = req.cookies.dummyshop;
-    console.log(dummyshopCookie);
+    const purchasedShopProducts = [];
+    dummyshopCookie.products.forEach(product => {
+        purchasedShopProducts.push({
+            price: product.productPrice * 100,
+            manufacturer: "XXXBike Inc.",
+            deviceClass: "6bdd2d93-45d0-49e1-8a0c-98eb80342222",
+            model: product.productName,
+            productId: product.productId
+        });
+    });
+
+    const wertgarantieCheckoutData = {
+        purchasedProducts: purchasedShopProducts,
+        customer: customerData,
+        secretClientId: "shopSecretClientId",
+        wertgarantieShoppingCart: wertgarantieCookieData
+    }
+    
+    // 1: checkout in shop
     const newOrderId = uuid();
     res.clearCookie('dummyshop');
+
+    // 2: call bifrost for wertgarantie checkout
+    axios({
+        method: 'post',
+        url: BIFROST_URI + '/shoppingCarts/current/checkout',
+        data: wertgarantieCheckoutData
+    }).then(console.log)
+    .catch(error => {
+        console.error(JSON.stringify(error.response.data));
+    });
+
     res.render('purchaseComplete', {
         orderedProducts: dummyshopCookie.products,
         orderId: newOrderId
