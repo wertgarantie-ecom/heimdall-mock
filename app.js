@@ -38,11 +38,6 @@ app.use('/api/*', function (req, res, next) {
 app.use(bodyParser.json());
 app.use('/api/v1', policyRouter);
 
-// catch 404 and forward to error handler
-app.use(function (req, res, next) {
-    next(createError(404));
-});
-
 app.use(function (err, req, res, next) {
     if (err.name === 'JsonSchemaValidation') {
         console.log(err.message);
@@ -58,6 +53,11 @@ app.use(function (err, req, res, next) {
         // pass error to next error middleware handler
         next(err);
     }
+});
+
+// catch 404 and forward to error handler
+app.use(function (req, res, next) {
+    next(createError(404));
 });
 
 // error handler

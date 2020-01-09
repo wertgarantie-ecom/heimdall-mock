@@ -28,7 +28,7 @@ router.get('/product-offers', function (req, res) {
 });
 
 
-router.post("/api/v1/products/:productId/checkout", validate({body: checkoutSchema}), function (req, res) {
+router.post("/products/:productId/checkout", validate({body: checkoutSchema}), function (req, res) {
     res.send({
         payload: {
             contract_number: "28850277",
