@@ -4,6 +4,7 @@ const axios = require('axios');
 const publicClientId = "b7c15227-1595-43cd-a53c-d9fb98ec3b3a";
 const COMPONENT_SELECTION_POP_UP = process.env.COMPONENT_SELECTION_POP_UP;
 const COMPONENT_CONFIRMATION = process.env.COMPONENT_CONFIRMATION;
+const COMPONENT_RATING = process.env.COMPONENT_RATING;
 const BIFROST_URI = process.env.BIFROST_URI;
 
 const customerData = {
@@ -101,6 +102,7 @@ exports.newShoppingCartItem = function newShoppingCartItem(req, res) {
         productId: productId,
         publicClientId: publicClientId,
         bifrostUri: BIFROST_URI,
-        popupComponentUri: COMPONENT_SELECTION_POP_UP
+        popupComponentUri: COMPONENT_SELECTION_POP_UP,
+        ratingComponentUri: COMPONENT_RATING
     })
 };
