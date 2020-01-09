@@ -6,7 +6,7 @@ var logger = require('morgan');
 var bodyParser = require('body-parser');
 const dotenv = require('dotenv');
 
-var policyRouter = require('./routes/policies');
+var policyRouter = require('./controller/heimdallMockController');
 
 var app = express();
 
@@ -26,7 +26,7 @@ app.use(express.static(path.join(__dirname, '/resources')));
 
 app.use('/healthcheck', require('express-healthcheck')());
 
-app.use('/demoshop', require('./routes/demoshopRoutes'));
+app.use('/demoshop', require('./demoshop/routes/demoshopRoutes'));
 
 app.use('/api/*', function (req, res, next) {
     if (!req.headers.authorization) {
