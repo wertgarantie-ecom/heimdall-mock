@@ -7,7 +7,7 @@ router.get("/", demoShopController.showShopIndex);
 router.get("/shoppingCart", demoShopController.showShoppingCart);
 router.get("/shoppingCartCookie", demoShopController.showShoppingCartCookie);
 router.post("/addToShoppingCart", demoShopController.addProductToShoppingCart);
-router.get("/newShoppingCartItem/:productId", demoShopController.newShoppingCartItem);
+router.get("/newShoppingCartItem", demoShopController.newShoppingCartItem);
 router.post("/checkout", demoShopController.checkout);
 // router.get("/shoppingCart", shoppingCartController.showShoppingCart);
 // router.get("/shoppingCart/:clientId", shoppingCartController.getShoppingCartForClientId);
