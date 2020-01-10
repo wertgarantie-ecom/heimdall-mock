@@ -51,8 +51,9 @@ exports.addProductToShoppingCart = function addProductToShoppingCart(req, res) {
 exports.checkout = async function checkout(req, res, next) {
     const wertgarantieCookieData = req.body['wertgarantie-cookie-data'];
     var dummyshopCookie = req.cookies.dummyshop;
+    const shopProducts = dummyshopCookie ? dummyshopCookie.products : [];
     const purchasedShopProducts = [];
-    dummyshopCookie.products.forEach(product => {
+    shopProducts.forEach(product => {
         purchasedShopProducts.push({
             price: product.productPrice * 100,
             manufacturer: "XXXBike Inc.",
@@ -88,8 +89,9 @@ exports.checkout = async function checkout(req, res, next) {
 
 
     res.render('purchaseComplete', {
-        orderedProducts: dummyshopCookie.products,
-        orderId: newOrderId
+        orderedProducts: shopProducts,
+        orderId: newOrderId,
+        wertgarantieResponse: JSON.stringify(checkoutResult.data, null, 2)
     })
 };
 
