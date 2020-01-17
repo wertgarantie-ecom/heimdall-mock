@@ -4,29 +4,17 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
-const dotenv = require('dotenv');
 
 var policyRouter = require('./controller/heimdallMockController');
 
 var app = express();
 
-const resolvedPath = path.resolve(__dirname, './config/' + process.env.NODE_ENV + '.env');
-dotenv.config({path: resolvedPath});
-
-// view engine setup
-app.set('views', path.join(__dirname, 'resources/ejs'));
-app.set('view engine', 'ejs');
-
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, '/resources')));
 
 app.use('/healthcheck', require('express-healthcheck')());
-
-app.use('/demoshop', require('./demoshop/routes/demoshopRoutes'));
 
 app.use('/api/*', function (req, res, next) {
     if (!req.headers.authorization) {
