@@ -39,5 +39,14 @@ router.post("/products/:productId/checkout", validate({body: checkoutSchema}), f
     });
 });
 
+router.get("/auth/client/:clientId", (req, res) => {
+    res.send({
+            payload: {
+                access_token: "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjVmMjk1NzQ2ZjE5Mzk3OTZmYmMzMjYxm..."
+            }
+        }
+    )
+});
+
 
 module.exports = router;
