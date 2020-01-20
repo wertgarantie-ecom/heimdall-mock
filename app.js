@@ -16,13 +16,6 @@ app.use(cookieParser());
 
 app.use('/healthcheck', require('express-healthcheck')());
 
-app.use('/api/*', function (req, res, next) {
-    if (!req.headers.authorization) {
-        return res.status(403).json({error: 'No credentials sent!'});
-    }
-    next();
-});
-
 app.use(bodyParser.json());
 app.use('/api/v1', policyRouter);
 

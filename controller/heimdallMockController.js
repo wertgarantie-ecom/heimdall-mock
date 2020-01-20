@@ -5,6 +5,13 @@ const bikeProducts = require('../testdata/bike').bikeProducts;
 const smartphoneProducts = require('../testdata/smartphone').smartphoneProducts;
 const router = express.Router();
 
+function authCheck(req, res, next) {
+    if (!req.headers.authorization) {
+        return res.status(403).json({error: 'No credentials sent!'});
+    }
+    next();
+}
+
 const deviceClassToProduct = {
     "1dfd4549-9bdc-4285-9047-e5088272dade": smartphoneProducts,
     "2dc16d28-c7af-4e19-9494-1659e1c27201": smartphoneProducts,
@@ -14,7 +21,7 @@ const deviceClassToProduct = {
     "6bdd2d93-45d0-49e1-8a0c-98eb80342222": bikeProducts
 };
 
-router.get('/product-offers', function (req, res) {
+router.get('/product-offers', authCheck, function (req, res) {
     if (!(req.query.device_class && req.query.device_purchase_price && req.query.device_purchase_date)) {
         throw new Error("Insufficient query parameters");
     }
@@ -28,7 +35,7 @@ router.get('/product-offers', function (req, res) {
 });
 
 
-router.post("/products/:productId/checkout", validate({body: checkoutSchema}), function (req, res) {
+router.post("/products/:productId/checkout", authCheck, validate({body: checkoutSchema}), function (req, res) {
     res.send({
         payload: {
             contract_number: "28850277",
