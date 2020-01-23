@@ -15,6 +15,7 @@ app.use(express.urlencoded({extended: false}));
 app.use(cookieParser());
 
 app.use('/healthcheck', require('express-healthcheck')());
+app.use('/git', require('./controller/gitInfoController'));
 
 app.use(bodyParser.json());
 app.use('/api/v1', policyRouter);
