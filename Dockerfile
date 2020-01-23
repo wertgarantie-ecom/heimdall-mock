@@ -6,6 +6,6 @@ RUN npm install
 
 COPY . /app/heimdall-mock/
 
-EXPOSE 3001
+EXPOSE 3000
 
-CMD NODE_ENV=local PORT=3001 node ./bin/www
+CMD npm run start-docker-compose
