@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "start-local": "PORT=3001 nodemon ./bin/www"
+    "start-local": "PORT=3001 nodemon ./bin/www",
+    "start-docker-compose": "nodemon ./bin/www"
   },
   "dependencies": {
     "acorn": "7.1.0",
@@ -21,6 +22,7 @@
     "uuid": "3.3.3"
   },
   "devDependencies": {
-    "eslint": "^6.3.0"
+    "eslint": "^6.3.0",
+    "nodemon": "^2.0.2"
   }
 }
