@@ -1,5 +1,6 @@
 FROM node:latest
 
+RUN mkdir -p /app/heimdall-mock
 WORKDIR /app/heimdall-mock/
 COPY package*.json /app/heimdall-mock/
 RUN npm install
