@@ -32,6 +32,9 @@ module.exports.checkoutSchema = {
         customer_email: {
             type: "string"
         },
+        customer_birthdate: {
+            type: "string"
+        },
         device_manufacturer: {
             type: "string"
         },
@@ -68,6 +71,7 @@ module.exports.checkoutSchema = {
         "customer_city",
         "customer_country",
         "customer_email",
+        "customer_birthdate",
         "device_manufacturer",
         "device_model",
         "device_class",
