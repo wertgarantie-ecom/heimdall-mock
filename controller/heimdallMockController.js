@@ -1,8 +1,8 @@
 const express = require('express');
 const validate = require('express-jsonschema').validate;
 const checkoutSchema = require('../schema/checkoutSchema').checkoutSchema;
-const bikeProducts = require('../testdata/bike').bikeProducts;
-const smartphoneProducts = require('../testdata/smartphone').smartphoneProducts;
+const bikeProducts = require('../testdata/heimdall/bike').bikeProducts;
+const smartphoneProducts = require('../testdata/heimdall/smartphone').smartphoneProducts;
 const router = express.Router();
 
 function authCheck(req, res, next) {

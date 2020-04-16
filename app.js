@@ -2,22 +2,29 @@ var createError = require('http-errors');
 var express = require('express');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var bodyParser = require('body-parser');
+var multer = require('multer');
+var upload = multer();
 
 var policyRouter = require('./controller/heimdallMockController');
+const webservicesMockController = require('./controller/webservicesMockController');
 
 var app = express();
 
 app.use(logger('dev'));
+
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
+app.use(upload.array());
+app.use(express.static('public'));
+
 app.use(cookieParser());
 
 app.use('/healthcheck', require('express-healthcheck')());
 app.use('/heroku', require('./controller/herokuController'));
 
-app.use(bodyParser.json());
+// app.use(bodyParser.json());
 app.use('/api/v1', policyRouter);
+app.use('/webservices', webservicesMockController);
 
 app.use(function (err, req, res, next) {
     if (err.name === 'JsonSchemaValidation') {

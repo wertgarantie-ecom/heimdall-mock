@@ -8,7 +8,7 @@
     "start-docker-compose": "nodemon ./bin/www"
   },
   "dependencies": {
-    "acorn": "7.1.0",
+    "acorn": "^7.1.1",
     "axios": "^0.19.1",
     "constantinople": "3.1.1",
     "cookie-parser": "1.4.4",
@@ -18,6 +18,7 @@
     "express-jsonschema": "1.1.6",
     "http-errors": "1.6.3",
     "morgan": "1.9.1",
+    "multer": "^1.4.2",
     "uuid": "3.3.3"
   },
   "devDependencies": {
