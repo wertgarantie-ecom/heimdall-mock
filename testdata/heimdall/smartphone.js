@@ -61,7 +61,7 @@ exports.smartphoneProducts = {
                 {
                     "document_title": "Rechtsdokumente",
                     "document_file": "gu_wg_de_ks_0419_rechtsdokumente.pdf",
-                    "document_type": null,
+                    "document_type": "LN",
                     "document_link": "https://stage-api.wertgarantie.com/download/82e38762-4440-46a9-a34e-58974a3ddad5"
                 },
                 {
@@ -167,7 +167,7 @@ exports.smartphoneProducts = {
                 {
                     "document_title": "Rechtsdokumente",
                     "document_file": "gu_wg_de_ks_0419_rechtsdokumente.pdf",
-                    "document_type": null,
+                    "document_type": "LN",
                     "document_link": "https://stage-api.wertgarantie.com/download/928e51ef-d92f-4aa4-ba42-61d1e100af2f"
                 },
                 {
