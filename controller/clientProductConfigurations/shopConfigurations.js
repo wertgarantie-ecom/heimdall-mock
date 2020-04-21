@@ -3,6 +3,9 @@ const documentContents = require('./documentContents');
 module.exports["test-phone-user"] = {
     session: "DG215870496878Q27G5SN7HX9FB7V49AF65Z27U7RN93M7U59FZ686PZ7NQ6Y19UJ5X67"
 };
+module.exports["test-handyflash-user"] = {
+    session: "DG215870496878Q27G5SN7HX9FB7V49AF65Z27U7RN93M7U59FZ686PZ7NQ6Y19UJ5X67"
+};
 module.exports["DG215870496878Q27G5SN7HX9FB7V49AF65Z27U7RN93M7U59FZ686PZ7NQ6Y19UJ5X67"] = {
     agentData: {
         "RESULT": {
@@ -169,6 +172,10 @@ module.exports["DG215870496878Q27G5SN7HX9FB7V49AF65Z27U7RN93M7U59FZ686PZ7NQ6Y19U
             "DOCUMENT": [
                 {
                     "FILENAME": "GU WG DE KS 0419_RECHTSDOKUMENTE.PDF",
+                    "CONTENT": documentContents.legalDocHandy
+                },
+                {
+                    "FILENAME": "GU WG DE KS 0419_PRODUKTINFORMATIONSBLATT.PDF",
                     "CONTENT": documentContents.legalDocHandy
                 }
             ],
