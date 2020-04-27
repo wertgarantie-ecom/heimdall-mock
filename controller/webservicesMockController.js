@@ -1,4 +1,5 @@
-const clientProductConfigurations = require('./clientProductConfigurations/shopConfigurations');
+const shopConfigurations = require('./clientProductConfigurations/shopConfigurations');
+const xmlParser = require('xml-parser');
 
 const express = require('express');
 const router = express.Router();
@@ -15,7 +16,7 @@ router.post('/login.pl', function (req, res) {
     if (!(req.body.USER && req.body.PASSWORD && req.body.COMPANY && req.body.API)) {
         return sendNotOkResponse(req.body, res, "unvollständiger request body");
     }
-    const client = clientProductConfigurations[req.body.USER];
+    const client = shopConfigurations[req.body.USER];
     if (!client) {
         return res.status(200).send({
             "STATUS": "NOT OK: Login failed",
@@ -30,7 +31,7 @@ router.post('/login.pl', function (req, res) {
 });
 
 router.post('/callservice.pl', function (req, res) {
-    let clientData = clientProductConfigurations[req.body.SESSION];
+    let clientData = shopConfigurations[req.body.SESSION];
     if (!clientData) {
         return sendNotOkResponse(req.body, res, "ungültige session" + req.body.SESSION);
     }
@@ -42,7 +43,7 @@ router.post('/callservice.pl', function (req, res) {
 });
 
 function send(content, res) {
-    res.status(200).send(content);
+    return res.status(200).send(content);
 }
 
 function agentData(req, res, clientData) {
@@ -51,6 +52,50 @@ function agentData(req, res, clientData) {
         return sendNotOkResponse(req.body, res, "Keine Versicherungsprodukte zu diesem Client gefunden. Client-Konfiguration überprüfen");
     }
     return res.status(200).send(agentData);
+}
+
+function makeParsedXMLHandy(root) {
+    root.children.forEach(child => {
+        if (child.children && child.children.length > 0) {
+            root[child.name] = [];
+            child.children.forEach(grandChild => {
+                root[child.name].push(makeParsedXMLHandy(grandChild));
+            });
+        } else {
+            root[child.name] = child.content
+        }
+        delete root.attributes;
+        delete root.name;
+        delete root.children;
+        delete root.content;
+    });
+    return root;
+}
+
+function getRelevantInsurancePremiumData(data) {
+    return {
+        paymentInterval: parseInt(data.PAYMENT_INTERVAL),
+        objectCode: data.DEVICES[0].OBJECT_CODE,
+        objectPrice: data.DEVICES[0].OBJECT_PRICE,
+        risks: data.DEVICES[0].RISKS.map(risk => risk.RISIKOTYP)
+    }
+}
+
+function assembleInsurancePremiumResponse(req) {
+    const xmlData = req.body.DATA;
+    const parsedXML = xmlParser(xmlData);
+    const data = makeParsedXMLHandy(parsedXML.root);
+    const relevantData = getRelevantInsurancePremiumData(data);
+    const premiumsPerRisk = shopConfigurations[req.body.SESSION].premiumsPerYear[relevantData.objectCode];
+    if (!premiumsPerRisk) {
+        return shopConfigurations.createDefaultErrorResponse;
+    }
+    let sum = 0;
+    relevantData.risks.forEach(risk => {
+       sum += premiumsPerRisk[risk] / 12 * relevantData.paymentInterval;
+    });
+    return shopConfigurations.createPremiumResponse(sum);
+
 }
 
 function productData(req, res, clientData) {
@@ -65,7 +110,7 @@ function productData(req, res, clientData) {
             return send(clientData.legalDocuments, res);
         }
         case "INSURANCE_PREMIUM": {
-            return send(clientData.insurancePremiums, res);
+            return send(assembleInsurancePremiumResponse(req), res);
         }
         default: return sendNotOkResponse(req.body, res, "SHAPING konnte nicht zugeordnet werden.");
     }

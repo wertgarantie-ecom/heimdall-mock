@@ -190,12 +190,65 @@ module.exports["DG215870496878Q27G5SN7HX9FB7V49AF65Z27U7RN93M7U59FZ686PZ7NQ6Y19U
         "STATUSCODE": "0",
         "PAGE": {}
     },
-    insurancePremiums: {
+    insurancePremium: {
         "RESULT": {
             "PREMIUM_SINGLE_PAYMENT": "0",
             "FEHLERMELDUNG": {},
             "PREMIUM_RECURRING_INTERVALL": "83,4",
             "PREMIUM_RECURRING": "83,4"
+        },
+        "LANGUAGE": "DE",
+        "MAXAMOUNT": "0",
+        "AMOUNT": "30",
+        "STATUS": "OK",
+        "REQUEST_ID": "98841369",
+        "ORDERBY": {},
+        "SORT": {},
+        "STATUSCODE": "0",
+        "PAGE": "1"
+    },
+    premiumsPerYear: {
+        "9025": {
+            "KOMPLETTSCHUTZ": 60,
+            "DIEBSTAHLSCHUTZ": 23.4
+        },
+        "Smartphone": {
+            "KOMPLETTSCHUTZ": 60,
+            "DIEBSTAHLSCHUTZ": 23.4
+        },
+        "73": {
+            "KOMPLETTSCHUTZ": 60,
+            "DIEBSTAHLSCHUTZ": 23.4
+        },
+        "Mobilfunk": {
+            "KOMPLETTSCHUTZ": 60,
+            "DIEBSTAHLSCHUTZ": 23.4
+        }
+    }
+};
+
+module.exports.createDefaultErrorResponse = {
+    "RESULT": {},
+    "LANGUAGE": "DE",
+    "MAXAMOUNT": "0",
+    "AMOUNT": "30",
+    "STATUS": "Fehler: Es ist ein technischer Fehler aufgetreten. Bitte kontaktieren Sie unseren technischen Support.",
+    "REQUEST_ID": "98913587",
+    "ORDERBY": {},
+    "SORT": "ASC",
+    "STATUSCODE": "65",
+    "PAGE": "1"
+};
+
+module.exports.createPremiumResponse = function createPremiumResponse(sum) {
+    const yearly = (sum * 12) + "";
+    const perSelectedInterval = sum + "";
+    return {
+        "RESULT": {
+            "PREMIUM_SINGLE_PAYMENT": "0",
+            "FEHLERMELDUNG": {},
+            "PREMIUM_RECURRING_INTERVALL": perSelectedInterval.replace(".", ","),
+            "PREMIUM_RECURRING": yearly.replace(".", ",")
         },
         "LANGUAGE": "DE",
         "MAXAMOUNT": "0",
