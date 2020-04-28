@@ -1,5 +1,7 @@
 const documentContents = require('./documentContents');
 
+let contractNumber = 10000;
+
 module.exports["test-phone-user"] = {
     session: "DG215870496878Q27G5SN7HX9FB7V49AF65Z27U7RN93M7U59FZ686PZ7NQ6Y19UJ5X67"
 };
@@ -224,6 +226,37 @@ module.exports["DG215870496878Q27G5SN7HX9FB7V49AF65Z27U7RN93M7U59FZ686PZ7NQ6Y19U
             "KOMPLETTSCHUTZ": 60,
             "DIEBSTAHLSCHUTZ": 23.4
         }
+    },
+    newContractNumber: function() {
+        return {
+            "RESULT" : {
+                "NEWCONTRACTNUMBER" : contractNumber++ + ""
+            },
+            "LANGUAGE" : "DE",
+            "MAXAMOUNT" : "1",
+            "AMOUNT" : "30",
+            "STATUS" : "OK",
+            "REQUEST_ID" : "98916696",
+            "ORDERBY" : {},
+            "SORT" : {},
+            "STATUSCODE" : "0",
+            "PAGE" : "1"
+        };
+    },
+    insuranceProposalResponse: {
+        "RESULT": {
+            "STATUS_TEXT": "Verarbeitet",
+            "STATUS_CODE": "3"
+        },
+        "LANGUAGE": "DE",
+        "MAXAMOUNT": "1",
+        "AMOUNT": "30",
+        "STATUS": "OK",
+        "REQUEST_ID": "98916702",
+        "ORDERBY": {},
+        "SORT": {},
+        "STATUSCODE": "0",
+        "PAGE": "1"
     }
 };
 

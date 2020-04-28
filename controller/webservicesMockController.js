@@ -38,6 +38,8 @@ router.post('/callservice.pl', function (req, res) {
     switch (req.body.FUNCTION) {
         case "GET_AGENT_DATA": return agentData(req, res, clientData);
         case "GET_PRODUCT_DATA": return productData(req, res, clientData);
+        case "GET_NEW_CONTRACTNUMBER": return send(clientData.newContractNumber(), res);
+        case "SET_XML_INTERFACE": return send(clientData.insuranceProposalResponse, res);
         default: return sendNotOkResponse(req.body, res, "keine FUNCTION gefunden zu " + req.body.FUNCTION);
     }
 });
