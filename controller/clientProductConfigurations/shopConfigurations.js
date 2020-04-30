@@ -1,4 +1,8 @@
-const documentContents = require('./documentContents');
+const GDPR = require('./documentContents/phone/GDPR').GDPRContent;
+const GTCI = require('./documentContents/phone/GTCI').GTCIContent;
+const IPID = require('./documentContents/phone/IPID').IPIDContent;
+const POLICY = require('./documentContents/phone/POLICY').POLICYContent;
+const COMPARISON = require('./documentContents/phone/COMPARISON').COMPARISONContent;
 
 let contractNumber = 10000;
 
@@ -155,7 +159,7 @@ module.exports["DG215870496878Q27G5SN7HX9FB7V49AF65Z27U7RN93M7U59FZ686PZ7NQ6Y19U
             "DOCUMENTS": {
                 "DOCUMENT": {
                     "FILENAME": "Leistungsvergleich KS19.pdf",
-                    "CONTENT": documentContents.comparisonDocHandy
+                    "CONTENT": COMPARISON
                 }
             }
         },
@@ -173,12 +177,24 @@ module.exports["DG215870496878Q27G5SN7HX9FB7V49AF65Z27U7RN93M7U59FZ686PZ7NQ6Y19U
         "RESULT": {
             "DOCUMENT": [
                 {
-                    "FILENAME": "GU WG DE KS 0419_RECHTSDOKUMENTE.PDF",
-                    "CONTENT": documentContents.legalDocHandy
+                    "DOCUMENT_TYPE": "GDPR",
+                    "FILENAME": "GDPR.pdf",
+                    "CONTENT": GDPR
                 },
                 {
-                    "FILENAME": "GU WG DE KS 0419_PRODUKTINFORMATIONSBLATT.PDF",
-                    "CONTENT": documentContents.legalDocHandy
+                    "DOCUMENT_TYPE": "GTCI",
+                    "FILENAME": "GTCI.pdf",
+                    "CONTENT": GTCI
+                },
+                {
+                    "DOCUMENT_TYPE": "IPID",
+                    "FILENAME": "IPID.pdf",
+                    "CONTENT": IPID
+                },
+                {
+                    "DOCUMENT_TYPE": "POLICY",
+                    "FILENAME": "POLICY.pdf",
+                    "CONTENT": POLICY
                 }
             ],
         },
