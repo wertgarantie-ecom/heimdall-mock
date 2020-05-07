@@ -218,7 +218,7 @@ module.exports["DG215870496878Q27G5SN7HX9FB7V49AF65Z27U7RN93M7U59FZ686PZ7NQ6Y19U
         "RESULT": {
             "PREMIUM_SINGLE_PAYMENT": "0",
             "FEHLERMELDUNG": {},
-            "PREMIUM_RECURRING_INTERVALL": "83,4",
+            "PREMIUM_RECURRING_INTERVAL": "83,4",
             "PREMIUM_RECURRING": "83,4"
         },
         "LANGUAGE": "DE",
@@ -302,7 +302,7 @@ module.exports.createPremiumResponse = function createPremiumResponse(sum) {
         "RESULT": {
             "PREMIUM_SINGLE_PAYMENT": "0",
             "FEHLERMELDUNG": {},
-            "PREMIUM_RECURRING_INTERVALL": perSelectedInterval.replace(".", ","),
+            "PREMIUM_RECURRING_INTERVAL": perSelectedInterval.replace(".", ","),
             "PREMIUM_RECURRING": yearly.replace(".", ",")
         },
         "LANGUAGE": "DE",
