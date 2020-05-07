@@ -3,6 +3,7 @@ const GTCI = require('./documentContents/phone/GTCI').GTCIContent;
 const IPID = require('./documentContents/phone/IPID').IPIDContent;
 const POLICY = require('./documentContents/phone/POLICY').POLICYContent;
 const COMPARISON = require('./documentContents/phone/COMPARISON').COMPARISONContent;
+const ROW = require('./documentContents/phone/ROW').ROWContent;
 
 let contractNumber = 10000;
 
@@ -195,6 +196,11 @@ module.exports["DG215870496878Q27G5SN7HX9FB7V49AF65Z27U7RN93M7U59FZ686PZ7NQ6Y19U
                     "DOCUMENT_TYPE": "POLICY",
                     "FILENAME": "POLICY.pdf",
                     "CONTENT": POLICY
+                },
+                {
+                    "DOCUMENT_TYPE": "ROW",
+                    "FILENAME": "Widerrufsbelehrung für Komplettschutz.pdf",
+                    "CONTENT": ROW
                 }
             ],
         },
