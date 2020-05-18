@@ -36,11 +36,16 @@ router.post('/callservice.pl', function (req, res) {
         return sendNotOkResponse(req.body, res, "ungültige session" + req.body.SESSION);
     }
     switch (req.body.FUNCTION) {
-        case "GET_AGENT_DATA": return agentData(req, res, clientData);
-        case "GET_PRODUCT_DATA": return productData(req, res, clientData);
-        case "GET_NEW_CONTRACTNUMBER": return send(clientData.newContractNumber(), res);
-        case "SET_XML_INTERFACE": return send(clientData.insuranceProposalResponse, res);
-        default: return sendNotOkResponse(req.body, res, "keine FUNCTION gefunden zu " + req.body.FUNCTION);
+        case "GET_AGENT_DATA":
+            return agentData(req, res, clientData);
+        case "GET_PRODUCT_DATA":
+            return productData(req, res, clientData);
+        case "GET_NEW_CONTRACTNUMBER":
+            return send(clientData.newContractNumber(), res);
+        case "SET_XML_INTERFACE":
+            return send(clientData.insuranceProposalResponse, res);
+        default:
+            return sendNotOkResponse(req.body, res, "keine FUNCTION gefunden zu " + req.body.FUNCTION);
     }
 });
 
@@ -92,9 +97,9 @@ function assembleInsurancePremiumResponse(req) {
     if (!premiumsPerRisk) {
         return shopConfigurations.createDefaultErrorResponse;
     }
-    let sum = 0;
+    let sum = parseInt(data.DEVICES[0].OBJECT_PRICE) > 1000 ? 2 : 0;
     relevantData.risks.forEach(risk => {
-       sum += premiumsPerRisk[risk] / 12 * relevantData.paymentInterval;
+        sum += premiumsPerRisk[risk] / 12 * relevantData.paymentInterval;
     });
     return shopConfigurations.createPremiumResponse(sum);
 
@@ -114,7 +119,8 @@ function productData(req, res, clientData) {
         case "INSURANCE_PREMIUM": {
             return send(assembleInsurancePremiumResponse(req), res);
         }
-        default: return sendNotOkResponse(req.body, res, "SHAPING konnte nicht zugeordnet werden.");
+        default:
+            return sendNotOkResponse(req.body, res, "SHAPING konnte nicht zugeordnet werden.");
     }
 }
 
