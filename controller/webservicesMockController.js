@@ -80,10 +80,12 @@ function makeParsedXMLHandy(root) {
 }
 
 function getRelevantInsurancePremiumData(data) {
+    const objectPriceFormatted = data.DEVICES[0].OBJECT_PRICE.replace(",", ".");
     return {
         paymentInterval: parseInt(data.PAYMENT_INTERVAL),
         objectCode: data.DEVICES[0].OBJECT_CODE,
-        objectPrice: data.DEVICES[0].OBJECT_PRICE,
+        objectPrice: parseFloat(objectPriceFormatted),
+        productType: data.PRODUCTTYPE,
         risks: data.DEVICES[0].RISKS.map(risk => risk.RISIKOTYP)
     }
 }
@@ -93,13 +95,13 @@ function assembleInsurancePremiumResponse(req) {
     const parsedXML = xmlParser(xmlData);
     const data = makeParsedXMLHandy(parsedXML.root);
     const relevantData = getRelevantInsurancePremiumData(data);
-    const premiumsPerRisk = shopConfigurations[req.body.SESSION].premiumsPerYear[relevantData.objectCode];
+    const premiumsPerRisk = shopConfigurations[req.body.SESSION].premiumsPerYear[relevantData.objectCode].getInsurancePremiumsPerRisk(relevantData.objectPrice);
     if (!premiumsPerRisk) {
         return shopConfigurations.createDefaultErrorResponse;
     }
-    let sum = parseInt(data.DEVICES[0].OBJECT_PRICE) > 1000 ? 2 : 0;
+    let sum = 0;
     relevantData.risks.forEach(risk => {
-        sum += premiumsPerRisk[risk] / 12 * relevantData.paymentInterval;
+        sum += premiumsPerRisk[risk][relevantData.productType] / 12 * relevantData.paymentInterval;
     });
     return shopConfigurations.createPremiumResponse(sum);
 
