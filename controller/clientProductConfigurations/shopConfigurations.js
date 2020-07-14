@@ -40,6 +40,30 @@ function getPhoneInsurancePremiums(objectPrice) {
     }
 }
 
+function getCeInsurancePremiums(objectPrice) {
+    if (objectPrice > 0 && objectPrice <= 1000) {
+        return {
+            "KOMPLETTSCHUTZ": {
+                "KOMPLETTSCHUTZ_2019": 60
+            },
+            "DIEBSTAHLSCHUTZ": {
+                "KOMPLETTSCHUTZ_2019": 23.4
+            }
+        }
+    } else if (objectPrice > 1000 && objectPrice <= 10000) {
+        return {
+            "KOMPLETTSCHUTZ": {
+                "KOMPLETTSCHUTZ_2019": 96
+            },
+            "DIEBSTAHLSCHUTZ": {
+                "KOMPLETTSCHUTZ_2019": 35.4
+            }
+        }
+    } else {
+        return undefined;
+    }
+}
+
 function getBikeInsurancePremiums(objectPrice) {
     if (objectPrice > 0 && objectPrice <= 500) {
         return {
@@ -122,6 +146,9 @@ function getElectricBikeInsurancePremiums(objectPrice) {
     }
 }
 
+module.exports["test-ce-user"] = {
+    session: "DG215870496878Q27G5SN7HX9FB7V49AF65Z27U7RN93M7U59FZ686PZ7NQ6Y19UJ5X67"
+};
 module.exports["test-phone-user"] = {
     session: "DG215870496878Q27G5SN7HX9FB7V49AF65Z27U7RN93M7U59FZ686PZ7NQ6Y19UJ5X67"
 };
@@ -351,17 +378,212 @@ module.exports["DG215870496878Q27G5SN7HX9FB7V49AF65Z27U7RN93M7U59FZ686PZ7NQ6Y19U
         "PAGE": "1"
     },
     premiumsPerYear: {
-        "9025": {
-            getInsurancePremiumsPerRisk: getPhoneInsurancePremiums
+        "25": {
+            getInsurancePremiumsPerRisk: getCeInsurancePremiums
         },
-        "Smartphone": {
-            getInsurancePremiumsPerRisk: getPhoneInsurancePremiums
+        "26": {
+            getInsurancePremiumsPerRisk: getCeInsurancePremiums
+        },
+        "29": {
+            getInsurancePremiumsPerRisk: getCeInsurancePremiums
+        },
+        "30": {
+            getInsurancePremiumsPerRisk: getCeInsurancePremiums
+        },
+        "31": {
+            getInsurancePremiumsPerRisk: getCeInsurancePremiums
+        },
+        "32": {
+            getInsurancePremiumsPerRisk: getCeInsurancePremiums
+        },
+        "35": {
+            getInsurancePremiumsPerRisk: getCeInsurancePremiums
+        },
+        "37": {
+            getInsurancePremiumsPerRisk: getCeInsurancePremiums
+        },
+        "38": {
+            getInsurancePremiumsPerRisk: getCeInsurancePremiums
+        },
+        "39": {
+            getInsurancePremiumsPerRisk: getCeInsurancePremiums
+        },
+        "40": {
+            getInsurancePremiumsPerRisk: getCeInsurancePremiums
+        },
+        "41": {
+            getInsurancePremiumsPerRisk: getCeInsurancePremiums
+        },
+        "42": {
+            getInsurancePremiumsPerRisk: getCeInsurancePremiums
+        },
+        "44": {
+            getInsurancePremiumsPerRisk: getCeInsurancePremiums
+        },
+        "45": {
+            getInsurancePremiumsPerRisk: getCeInsurancePremiums
+        },
+        "47": {
+            getInsurancePremiumsPerRisk: getCeInsurancePremiums
+        },
+        "50": {
+            getInsurancePremiumsPerRisk: getCeInsurancePremiums
+        },
+        "51": {
+            getInsurancePremiumsPerRisk: getCeInsurancePremiums
+        },
+        "52": {
+            getInsurancePremiumsPerRisk: getCeInsurancePremiums
+        },
+        "53": {
+            getInsurancePremiumsPerRisk: getCeInsurancePremiums
+        },
+        "54": {
+            getInsurancePremiumsPerRisk: getCeInsurancePremiums
+        },
+        "55": {
+            getInsurancePremiumsPerRisk: getCeInsurancePremiums
+        },
+        "56": {
+            getInsurancePremiumsPerRisk: getCeInsurancePremiums
+        },
+        "57": {
+            getInsurancePremiumsPerRisk: getCeInsurancePremiums
+        },
+        "58": {
+            getInsurancePremiumsPerRisk: getCeInsurancePremiums
+        },
+        "59": {
+            getInsurancePremiumsPerRisk: getCeInsurancePremiums
+        },
+        "60": {
+            getInsurancePremiumsPerRisk: getCeInsurancePremiums
+        },
+        "61": {
+            getInsurancePremiumsPerRisk: getCeInsurancePremiums
+        },
+        "62": {
+            getInsurancePremiumsPerRisk: getCeInsurancePremiums
+        },
+        "63": {
+            getInsurancePremiumsPerRisk: getCeInsurancePremiums
+        },
+        "64": {
+            getInsurancePremiumsPerRisk: getCeInsurancePremiums
+        },
+        "65": {
+            getInsurancePremiumsPerRisk: getCeInsurancePremiums
+        },
+        "66": {
+            getInsurancePremiumsPerRisk: getCeInsurancePremiums
+        },
+        "67": {
+            getInsurancePremiumsPerRisk: getCeInsurancePremiums
+        },
+        "68": {
+            getInsurancePremiumsPerRisk: getCeInsurancePremiums
+        },
+        "69": {
+            getInsurancePremiumsPerRisk: getCeInsurancePremiums
+        },
+        "70": {
+            getInsurancePremiumsPerRisk: getCeInsurancePremiums
+        },
+        "71": {
+            getInsurancePremiumsPerRisk: getCeInsurancePremiums
+        },
+        "72": {
+            getInsurancePremiumsPerRisk: getCeInsurancePremiums
         },
         "73": {
             getInsurancePremiumsPerRisk: getPhoneInsurancePremiums
         },
-        "Mobilfunk": {
+        "74": {
+            getInsurancePremiumsPerRisk: getCeInsurancePremiums
+        },
+        "75": {
+            getInsurancePremiumsPerRisk: getCeInsurancePremiums
+        },
+        "76": {
+            getInsurancePremiumsPerRisk: getCeInsurancePremiums
+        },
+        "77": {
+            getInsurancePremiumsPerRisk: getCeInsurancePremiums
+        },
+        "78": {
+            getInsurancePremiumsPerRisk: getCeInsurancePremiums
+        },
+        "79": {
+            getInsurancePremiumsPerRisk: getCeInsurancePremiums
+        },
+        "80": {
+            getInsurancePremiumsPerRisk: getCeInsurancePremiums
+        },
+        "81": {
+            getInsurancePremiumsPerRisk: getCeInsurancePremiums
+        },
+        "87": {
+            getInsurancePremiumsPerRisk: getCeInsurancePremiums
+        },
+        "88": {
+            getInsurancePremiumsPerRisk: getCeInsurancePremiums
+        },
+        "89": {
+            getInsurancePremiumsPerRisk: getCeInsurancePremiums
+        },
+        "90": {
+            getInsurancePremiumsPerRisk: getCeInsurancePremiums
+        },
+        "91": {
+            getInsurancePremiumsPerRisk: getCeInsurancePremiums
+        },
+        "92": {
+            getInsurancePremiumsPerRisk: getCeInsurancePremiums
+        },
+        "93": {
+            getInsurancePremiumsPerRisk: getCeInsurancePremiums
+        },
+        "94": {
+            getInsurancePremiumsPerRisk: getCeInsurancePremiums
+        },
+        "95": {
+            getInsurancePremiumsPerRisk: getCeInsurancePremiums
+        },
+        "97": {
+            getInsurancePremiumsPerRisk: getCeInsurancePremiums
+        },
+        "98": {
+            getInsurancePremiumsPerRisk: getCeInsurancePremiums
+        },
+        "112": {
+            getInsurancePremiumsPerRisk: getCeInsurancePremiums
+        },
+        "113": {
+            getInsurancePremiumsPerRisk: getCeInsurancePremiums
+        },
+        "114": {
+            getInsurancePremiumsPerRisk: getCeInsurancePremiums
+        },
+        "115": {
+            getInsurancePremiumsPerRisk: getCeInsurancePremiums
+        },
+        "9025": {
             getInsurancePremiumsPerRisk: getPhoneInsurancePremiums
+        },
+        "9026": {
+            getInsurancePremiumsPerRisk: getCeInsurancePremiums
+        },
+        "9031": {
+            getInsurancePremiumsPerRisk: getCeInsurancePremiums
+        },
+        "9032": {
+            getInsurancePremiumsPerRisk: getCeInsurancePremiums
+        },
+        "9033": {
+            getInsurancePremiumsPerRisk: getCeInsurancePremiums
+        },
+        "59005": {
+            getInsurancePremiumsPerRisk: getCeInsurancePremiums
         }
     },
     newContractNumber: function () {
