@@ -1,6 +1,7 @@
 var createError = require('http-errors');
 var express = require('express');
 var cookieParser = require('cookie-parser');
+var cors = require('cors');
 var logger = require('morgan');
 var multer = require('multer');
 var upload = multer();
@@ -9,6 +10,14 @@ var policyRouter = require('./controller/heimdallMockController');
 const webservicesMockController = require('./controller/webservicesMockController');
 
 var app = express();
+
+var corsOptions = {
+    origin: true,
+    credentials: true
+};
+
+app.use(cors(corsOptions));
+app.options('*', cors(corsOptions));
 
 app.use(logger('dev'));
 

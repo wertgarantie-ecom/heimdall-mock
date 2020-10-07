@@ -4,6 +4,7 @@ const IPID = require('./documentContents/phone/IPID').IPIDContent;
 const POLICY = require('./documentContents/phone/POLICY').POLICYContent;
 const COMPARISON = require('./documentContents/phone/COMPARISON').COMPARISONContent;
 const ROW = require('./documentContents/phone/ROW').ROWContent;
+const VWT = require('./documentContents/phone/VWT').VWTContent;
 
 let contractNumber = 10000;
 
@@ -293,45 +294,52 @@ module.exports["DG215870496878Q27G5SN7HX9FB7V49AF65Z27U7RN93M7U59FZ686PZ7NQ6Y19U
         "STATUSCODE": "0",
         "PAGE": {}
     },
-    legalDocuments: {
-        "RESULT": {
-            "DOCUMENT": [
-                {
-                    "DOCUMENT_TYPE": "GDPR",
-                    "FILENAME": "GDPR.pdf",
-                    "CONTENT": GDPR
-                },
-                {
-                    "DOCUMENT_TYPE": "GTCI",
-                    "FILENAME": "GTCI.pdf",
-                    "CONTENT": GTCI
-                },
-                {
-                    "DOCUMENT_TYPE": "IPID",
-                    "FILENAME": "IPID.pdf",
-                    "CONTENT": IPID
-                },
-                {
-                    "DOCUMENT_TYPE": "POLICY",
-                    "FILENAME": "POLICY.pdf",
-                    "CONTENT": POLICY
-                },
-                {
-                    "DOCUMENT_TYPE": "ROW",
-                    "FILENAME": "Widerrufsbelehrung für Komplettschutz.pdf",
-                    "CONTENT": ROW
-                }
-            ],
-        },
-        "LANGUAGE": "DE",
-        "MAXAMOUNT": "5",
-        "AMOUNT": {},
-        "STATUS": "OK",
-        "REQUEST_ID": "98868588",
-        "ORDERBY": {},
-        "SORT": {},
-        "STATUSCODE": "0",
-        "PAGE": {}
+    legalDocuments: () => {
+        return {
+            "RESULT": {
+                "DOCUMENT": [
+                    {
+                        "DOCUMENT_TYPE": "GDPR",
+                        "FILENAME": "GDPR.pdf",
+                        "CONTENT": GDPR
+                    },
+                    {
+                        "DOCUMENT_TYPE": "GTCI",
+                        "FILENAME": "GTCI.pdf",
+                        "CONTENT": GTCI
+                    },
+                    {
+                        "DOCUMENT_TYPE": "IPID",
+                        "FILENAME": "IPID.pdf",
+                        "CONTENT": IPID
+                    },
+                    {
+                        "DOCUMENT_TYPE": "POLICY",
+                        "FILENAME": "POLICY.pdf",
+                        "CONTENT": POLICY
+                    },
+                    {
+                        "DOCUMENT_TYPE": "ROW",
+                        "FILENAME": "Widerrufsbelehrung für Komplettschutz.pdf",
+                        "CONTENT": ROW
+                    },
+                    {
+                        "DOCUMENT_TYPE": "VWT",
+                        "FILENAME": "Versicherungswerttabelle.pdf",
+                        "CONTENT": VWT
+                    }
+                ],
+            },
+            "LANGUAGE": "DE",
+            "MAXAMOUNT": "5",
+            "AMOUNT": {},
+            "STATUS": "OK",
+            "REQUEST_ID": "98868588",
+            "ORDERBY": {},
+            "SORT": {},
+            "STATUSCODE": "0",
+            "PAGE": {}
+        }
     },
     insurancePremium: {
         "RESULT": {
@@ -636,45 +644,52 @@ module.exports["DG215906653016T8DE6KR6M88M47Y71847OQ7BN5G246F3PL337224GD2KR5ZO3A
         "STATUSCODE": "0",
         "PAGE": {}
     },
-    legalDocuments: {
-        "RESULT": {
-            "DOCUMENT": [
-                {
-                    "DOCUMENT_TYPE": "GDPR",
-                    "FILENAME": "GDPR.pdf",
-                    "CONTENT": GDPR
-                },
-                {
-                    "DOCUMENT_TYPE": "GTCI",
-                    "FILENAME": "GTCI.pdf",
-                    "CONTENT": GTCI
-                },
-                {
-                    "DOCUMENT_TYPE": "IPID",
-                    "FILENAME": "IPID.pdf",
-                    "CONTENT": IPID
-                },
-                {
-                    "DOCUMENT_TYPE": "POLICY",
-                    "FILENAME": "POLICY.pdf",
-                    "CONTENT": POLICY
-                },
-                {
-                    "DOCUMENT_TYPE": "ROW",
-                    "FILENAME": "Widerrufsbelehrung für Komplettschutz.pdf",
-                    "CONTENT": ROW
-                }
-            ],
-        },
-        "LANGUAGE": "DE",
-        "MAXAMOUNT": "5",
-        "AMOUNT": {},
-        "STATUS": "OK",
-        "REQUEST_ID": "98868588",
-        "ORDERBY": {},
-        "SORT": {},
-        "STATUSCODE": "0",
-        "PAGE": {}
+    legalDocuments: () => {
+        return {
+            "RESULT": {
+                "DOCUMENT": [
+                    {
+                        "DOCUMENT_TYPE": "GDPR",
+                        "FILENAME": "GDPR.pdf",
+                        "CONTENT": GDPR
+                    },
+                    {
+                        "DOCUMENT_TYPE": "GTCI",
+                        "FILENAME": "GTCI.pdf",
+                        "CONTENT": GTCI
+                    },
+                    {
+                        "DOCUMENT_TYPE": "IPID",
+                        "FILENAME": "IPID.pdf",
+                        "CONTENT": IPID
+                    },
+                    {
+                        "DOCUMENT_TYPE": "POLICY",
+                        "FILENAME": "POLICY.pdf",
+                        "CONTENT": POLICY
+                    },
+                    {
+                        "DOCUMENT_TYPE": "ROW",
+                        "FILENAME": "Widerrufsbelehrung für Komplettschutz.pdf",
+                        "CONTENT": ROW
+                    },
+                    {
+                        "DOCUMENT_TYPE": "VWT",
+                        "FILENAME": "Versicherungwerttabelle.pdf",
+                        "CONTENT": VWT
+                    }
+                ],
+            },
+            "LANGUAGE": "DE",
+            "MAXAMOUNT": "5",
+            "AMOUNT": {},
+            "STATUS": "OK",
+            "REQUEST_ID": "98868588",
+            "ORDERBY": {},
+            "SORT": {},
+            "STATUSCODE": "0",
+            "PAGE": {}
+        }
     },
     premiumsPerYear: {
         "27": {

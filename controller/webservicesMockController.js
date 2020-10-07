@@ -50,6 +50,7 @@ router.post('/callservice.pl', function (req, res) {
 });
 
 function send(content, res) {
+    res.header('Access-Control-Allow-Origin', '*');
     return res.status(200).send(content);
 }
 
@@ -107,6 +108,15 @@ function assembleInsurancePremiumResponse(req) {
 
 }
 
+function assembleLegalDocumentResponse(legalDocuments, req) {
+    const documentType = req.body.DOCUMENT_TYPE;
+    if (documentType && documentType !== "EINZELN") {
+        const doc = legalDocuments.RESULT.DOCUMENT.filter(document => document.DOCUMENT_TYPE === documentType);
+        legalDocuments.RESULT.DOCUMENT = doc[0];
+    }
+    return legalDocuments;
+}
+
 function productData(req, res, clientData) {
     switch (req.body.SHAPING) {
         case "ADVERTISING_TEXT": {
@@ -116,7 +126,7 @@ function productData(req, res, clientData) {
             return send(clientData.comparisonDocuments, res);
         }
         case "LEGAL_DOCUMENTS": {
-            return send(clientData.legalDocuments, res);
+            return send(assembleLegalDocumentResponse(clientData.legalDocuments(), req), res);
         }
         case "INSURANCE_PREMIUM": {
             return send(assembleInsurancePremiumResponse(req), res);
