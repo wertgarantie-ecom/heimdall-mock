@@ -5,6 +5,8 @@ const POLICY = require('./documentContents/phone/POLICY').POLICYContent;
 const COMPARISON = require('./documentContents/phone/COMPARISON').COMPARISONContent;
 const ROW = require('./documentContents/phone/ROW').ROWContent;
 const VWT = require('./documentContents/phone/VWT').VWTContent;
+const GUFHP = require('./documentContents/phone/GUFHP').GUFHPContent;
+const GUFHP_IBAN = require('./documentContents/phone/GUFHP_IBAN').GUFHP_IBANContent;
 
 let contractNumber = 10000;
 
@@ -899,6 +901,16 @@ module.exports["DG215906653016T8DE6KR6M88M47Y71847OQ7BN5G246F3PL337224GD2KR5ZO3A
                         "DOCUMENT_TYPE": "VWT",
                         "FILENAME": "Versicherungwerttabelle.pdf",
                         "CONTENT": VWT
+                    },
+                    {
+                        "DOCUMENT_TYPE": "GUFHP",
+                        "FILENAME": "Garantieurkunde.pdf",
+                        "CONTENT": GUFHP
+                    },
+                    {
+                        "DOCUMENT_TYPE": "GUFHP_IBAN",
+                        "FILENAME": "Garantieurkunde_IBAN.pdf",
+                        "CONTENT": GUFHP_IBAN
                     }
                 ],
             },
