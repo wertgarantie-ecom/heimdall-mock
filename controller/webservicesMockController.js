@@ -44,6 +44,8 @@ router.post('/callservice.pl', function (req, res) {
             return send(clientData.newContractNumber(), res);
         case "SET_XML_INTERFACE":
             return send(clientData.insuranceProposalResponse, res);
+        case "GET_OBJECT_DETAILS":
+            return send(clientData.manufacturerList, res);
         default:
             return sendNotOkResponse(req.body, res, "keine FUNCTION gefunden zu " + req.body.FUNCTION);
     }
