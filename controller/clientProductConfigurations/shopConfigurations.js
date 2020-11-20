@@ -1391,12 +1391,44 @@ module.exports["DG215906653016T8DE6KR6M88M47Y71847OQ7BN5G246F3PL337224GD2KR5ZO3A
                             ]
                         },
                         "SIGANATURES": "0"
+                    },
+                    {
+                        "BASIC_RISK": "LEIHRADSCHUTZ",
+                        "RISKS": {
+                            "RISK": {
+                                "RISK_NAME": "",
+                                "RISK_TYPE": ""
+                            }
+                        },
+                        "APPLICATION_CODE": "GU WG DE RAD KS LEIH 0819",
+                        "SIGNATURES": "1",
+                        "PURCHASE_PRICE_LIMITATIONS": {
+                            "MAX_PRICE": {
+                                "AMOUNT": "6000",
+                                "OBJECT_CODE": {}
+                            }
+                        },
+                        "PRODUCT_TYPE": "LEIHRADSCHUTZ_2019",
+                        "TERM": "langfristig",
+                        "PRODUCT_NAME": "Leihradschutz",
+                        "COLLECTIONTYPES": {
+                            "Einzug": "true",
+                            "Selbstzahler": "true"
+                        },
+                        "MAX_DEVICES_EACH_CONTRACT": "1",
+                        "PAYMENTINTERVALS": {
+                            "INTERVAL": {
+                                "VALUE": "1",
+                                "DESCRIPTION": "monatlich"
+                            }
+                        },
+                        "SIGANATURES": "1"
                     }
                 ]
             }
         },
         "LANGUAGE": "DE",
-        "MAXAMOUNT": "5",
+        "MAXAMOUNT": "7",
         "AMOUNT": "30",
         "STATUS": "OK",
         "REQUEST_ID": "99020995",
@@ -1562,3 +1594,36 @@ module.exports.createPremiumResponse = function createPremiumResponse(sum) {
         "PAGE": "1"
     }
 };
+
+// {
+//     "BASIC_RISK": "LEIHRADSCHUTZ_AT",
+//     "RISKS": {
+//         "RISK": {
+//             "RISK_NAME": "",
+//             "RISK_TYPE": ""
+//         }
+//     },
+//     "APPLICATION_CODE": "GU WG AT RAD KS LEIH 0519",
+//     "SIGNATURES": "1",
+//     "PURCHASE_PRICE_LIMITATIONS": {
+//         "MAX_PRICE": {
+//             "AMOUNT": "6000",
+//             "OBJECT_CODE": {}
+//         }
+//     },
+//     "PRODUCT_TYPE": "LEIHRADSCHUTZ_2019_AT",
+//     "TERM": "langfristig",
+//     "PRODUCT_NAME": "Leihradschutz",
+//     "COLLECTIONTYPES": {
+//         "Einzug": "true",
+//         "Selbstzahler": "true"
+//     },
+//     "MAX_DEVICES_EACH_CONTRACT": "1",
+//     "PAYMENTINTERVALS": {
+//         "INTERVAL": {
+//             "VALUE": "1",
+//             "DESCRIPTION": "monatlich"
+//         }
+//     },
+//     "SIGANATURES": "1"
+// }
