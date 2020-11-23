@@ -1393,6 +1393,102 @@ module.exports["DG215906653016T8DE6KR6M88M47Y71847OQ7BN5G246F3PL337224GD2KR5ZO3A
                         "SIGANATURES": "0"
                     },
                     {
+                        "BASIC_RISK": "KOMPLETTSCHUTZ_EBIKE_EB",
+                        "RISKS": {
+                            "RISK": {
+                                "RISK_NAME": "",
+                                "RISK_TYPE": ""
+                            }
+                        },
+                        "APPLICATION_CODE": "Elektro BOC 1118",
+                        "SIGNATURES": "1",
+                        "PURCHASE_PRICE_LIMITATIONS": {
+                            "MAX_PRICE": {
+                                "AMOUNT": "10000",
+                                "OBJECT_CODE": {}
+                            }
+                        },
+                        "PRODUCT_TYPE": "KOMPLETTSCHUTZ_BOC_FIN_2018_36",
+                        "TERM": "Einmalprämie",
+                        "PRODUCT_NAME": "B.O.C E-Bike Finance 2018 36",
+                        "COLLECTIONTYPES": {
+                            "Einzug": "false",
+                            "Selbstzahler": "false"
+                        },
+                        "MAX_DEVICES_EACH_CONTRACT": "1",
+                        "PAYMENTINTERVALS": {
+                            "INTERVAL": {
+                                "VALUE": "0",
+                                "DESCRIPTION": "Einmalprämie"
+                            }
+                        },
+                        "SIGANATURES": "1"
+                    },
+                    {
+                        "BASIC_RISK": "KOMPLETTSCHUTZ_EBIKE_EB",
+                        "RISKS": {
+                            "RISK": {
+                                "RISK_NAME": "",
+                                "RISK_TYPE": ""
+                            }
+                        },
+                        "APPLICATION_CODE": "Elektro BOC 1118",
+                        "SIGNATURES": "1",
+                        "PURCHASE_PRICE_LIMITATIONS": {
+                            "MAX_PRICE": {
+                                "AMOUNT": "10000",
+                                "OBJECT_CODE": {}
+                            }
+                        },
+                        "PRODUCT_TYPE": "KOMPLETTSCHUTZ_BOC_FIN_2018_48",
+                        "TERM": "Einmalprämie",
+                        "PRODUCT_NAME": "B.O.C E-Bike Finance 2018 48",
+                        "COLLECTIONTYPES": {
+                            "Einzug": "false",
+                            "Selbstzahler": "false"
+                        },
+                        "MAX_DEVICES_EACH_CONTRACT": "1",
+                        "PAYMENTINTERVALS": {
+                            "INTERVAL": {
+                                "VALUE": "0",
+                                "DESCRIPTION": "Einmalprämie"
+                            }
+                        },
+                        "SIGANATURES": "1"
+                    },
+                    {
+                        "BASIC_RISK": "KOMPLETTSCHUTZ_EBIKE_EB",
+                        "RISKS": {
+                            "RISK": {
+                                "RISK_NAME": "",
+                                "RISK_TYPE": ""
+                            }
+                        },
+                        "APPLICATION_CODE": "Elektro BOC 1118",
+                        "SIGNATURES": "1",
+                        "PURCHASE_PRICE_LIMITATIONS": {
+                            "MAX_PRICE": {
+                                "AMOUNT": "10000",
+                                "OBJECT_CODE": {}
+                            }
+                        },
+                        "PRODUCT_TYPE": "KOMPLETTSCHUTZ_BOC_FIN_2018_60",
+                        "TERM": "Einmalprämie",
+                        "PRODUCT_NAME": "B.O.C E-Bike Finance 2018 60",
+                        "COLLECTIONTYPES": {
+                            "Einzug": "false",
+                            "Selbstzahler": "false"
+                        },
+                        "MAX_DEVICES_EACH_CONTRACT": "1",
+                        "PAYMENTINTERVALS": {
+                            "INTERVAL": {
+                                "VALUE": "0",
+                                "DESCRIPTION": "Einmalprämie"
+                            }
+                        },
+                        "SIGANATURES": "1"
+                    },
+                    {
                         "BASIC_RISK": "LEIHRADSCHUTZ",
                         "RISKS": {
                             "RISK": {
