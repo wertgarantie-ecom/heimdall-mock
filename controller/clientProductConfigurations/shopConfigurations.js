@@ -1519,7 +1519,33 @@ module.exports["DG215906653016T8DE6KR6M88M47Y71847OQ7BN5G246F3PL337224GD2KR5ZO3A
                             }
                         },
                         "SIGANATURES": "1"
-                    }
+                    },
+                    {
+                        BASIC_RISK: "KOMPLETTSCHUTZ_EFZ",
+                        RISKS: {RISK: {RISK_NAME: "Sofortschutz", RISK_TYPE: "SOFORTSCHUTZ"}},
+                        APPLICATION_CODE: "AN WG DE SKS 0220",
+                        SIGNATURES: "0",
+                        PURCHASE_PRICE_LIMITATIONS: {
+                            MAX_PRICE: {AMOUNT: "10000", OBJECT_CODE: {}},
+                        },
+                        PRODUCT_TYPE: "KOMPLETTSCHUTZ_EFZ",
+                        TERM: "langfristig",
+                        PRODUCT_NAME: "Komplettschutz S-Pedelec 2020",
+                        COLLECTIONTYPES: {Einzug: "true", Selbstzahler: "true"},
+                        MAX_DEVICES_EACH_CONTRACT: "1",
+                        PAYMENTINTERVALS: {
+                            INTERVAL: [
+                                {VALUE: "1", DESCRIPTION: "monatlich"},
+                                {
+                                    VALUE: "3",
+                                    DESCRIPTION: "vierteljährlich",
+                                },
+                                {VALUE: "6", DESCRIPTION: "halbjährlich"},
+                                {VALUE: "12", DESCRIPTION: "jährlich"},
+                            ],
+                        },
+                        SIGANATURES: "0",
+                    },
                 ]
             }
         },
