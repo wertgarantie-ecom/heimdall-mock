@@ -7,7 +7,7 @@ Service to mock Wertgarantie's webservices API
 ## Related projects
 
 | Package                                                       | Description                                                                                                                         |
-| ------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| :------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [Wertgarantie-ecom](https://github.com/wertgarantie-ecom)                                         | Overview over all 'wertgarantie-ecom' projects                                          |
 | [Bifrost](https://github.com/wertgarantie-ecom/bifrost)                     | "Backend-for-frontend" between Wertgaranties's webservices and the custom elements                               |
 | [Bifrost components](https://github.com/wertgarantie-ecom/bifrost-components)             | Contains all custom elements.                   |
